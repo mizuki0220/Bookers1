@@ -1,0 +1,17 @@
+body {
+  font-family: verdana, sans-serif;
+}
+
+h1 {
+  margin: 30px;
+  font-size: 25px;
+}
+
+strong {
+  font-weight: bold;
+}
+
+p {
+  margin: 0 0 30px 70px;
+  font-size: 13px;
+}
