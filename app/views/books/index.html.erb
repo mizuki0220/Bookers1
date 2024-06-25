@@ -1,5 +1,13 @@
 <%= stylesheet_link_tag 'index' %>
 
+<h1>Books</h1>
+<% @books.each do |book| %>
+  <p>タイトル</p>
+  <span>
+    <%= link_to book.title %>
+  </span>
+<% end %>
+
 <h3>New book</h3>
 <%= form_with model: @book, url: '/books', method: :post do |f| %>
 
