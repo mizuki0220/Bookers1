@@ -11,7 +11,7 @@ strong {
   font-weight: bold;
 }
 
-p {
+.top-text {
   margin: 0 0 30px 70px;
   font-size: 13px;
 }

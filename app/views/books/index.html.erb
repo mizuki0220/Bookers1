@@ -3,18 +3,15 @@
 <h3>New book</h3>
 <%= form_with model: @book, url: '/books', method: :post do |f| %>
 
-<div class="new-title">
-  <label>Title</label>
+  <p class="new-form">Title<br>
   <%= f.text_field :title %>
-</div>
-
-<div class="new-body">
-  <ladel>Body</label>
+  </p>
+  
+  <p class="new-form">Body<br>
   <%= f.text_area :body %>
-</div>
-
-<div class="new-submit">
+  </p>
+  
   <%= f.submit 'Create Book' %>
-</div>
+
 <% end %>
 
