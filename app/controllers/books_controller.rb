@@ -14,8 +14,8 @@ class BooksController < ApplicationController
   end
 
   def index
+    @books = Book.all.order(created_at: :desc)
     @book = Book.new
-    @books = Book.all
   end
 
   def show
@@ -39,6 +39,7 @@ class BooksController < ApplicationController
   
   def destroy
     book = Book.find(params[:id])
+    puts "Destroying book: #{book.inspect}"
     book.destroy
     redirect_to '/books'
   end 

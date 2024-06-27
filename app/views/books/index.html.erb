@@ -17,7 +17,7 @@
       <td><%= book.body %></td>
       <td><%= link_to 'Show', book %></td>
       <td><%= link_to 'Edit', edit_book_path(book) %></td>
-      <td><%= link_to 'Destroy', book, method: :delete, date: { confirm: 'Are you sure?' } %></td>
+      <td><%= link_to 'Destroy', book, method: :delete, "data-confirm" => "Are you sure?", :class => "delete-link" %></td>
     </tr>
     <% end %>
   </tbody>
@@ -25,6 +25,16 @@
 
 
 <h3>New book</h3>
+
+<% if @book.errors.any? %>
+  <%= @book.errors.count %>件のエラーが発生しました
+  <ul>
+    <% @book.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= form_with model: @book, url: '/books', method: :post do |f| %>
 
   <p class="new-form">Title<br>
